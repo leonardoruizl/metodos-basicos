@@ -6,33 +6,21 @@ public class Basicos {
 
     private final Scanner scanner = new Scanner(System.in);
 
-    public void calcularAreaTriangulo() {
+    public double calcularAreaTriangulo() {
         System.out.print("Ingresa la base: ");
         double base = scanner.nextDouble();
-
-        if (base <= 0) {
-            System.out.println("La base debe ser mayor a 0.");
-            return;
-        }
 
         System.out.println();
 
         System.out.print("Ingresa la altura: ");
         double altura = scanner.nextDouble();
 
-        if (altura <= 0) {
-            System.out.println("La altura debe ser mayor a 0.");
-            return;
-        }
-
         System.out.println();
 
-        double area = base * altura / 2;
-
-        System.out.println("El area del triangulo es: " + area);
+        return base * altura / 2;
     }
 
-    public void calcularAreaCirculo() {
+    public double calcularAreaCirculo() {
         System.out.print("Ingresa el radio del circulo: ");
         double radio = scanner.nextDouble();
 
@@ -40,15 +28,12 @@ public class Basicos {
 
         if (radio <= 0) {
             System.out.println("El radio debe ser mayor a cero.");
-            return;
         }
 
-        double area = Math.PI * radio * radio;
-
-        System.out.println("El area del circulo es: " + area);
+        return Math.PI * radio * radio;
     }
 
-    public void calcularPromedioAlumno() {
+    public double calcularPromedioAlumno() {
         double suma = 0;
 
         for (int i = 1; i <= 5; i++) {
@@ -58,40 +43,31 @@ public class Basicos {
 
         System.out.println();
 
-        double promedio = suma / 5;
-
-        System.out.println("El promedio de las calificaciones es: " + promedio);
+        return suma / 5;
     }
 
-    public void convertirTemperaturaAFahrenheit() {
+    public double convertirTemperaturaAFahrenheit() {
         System.out.print("Ingresa la temperatura en Celsius: ");
         double temperaturaC = scanner.nextDouble();
 
         System.out.println();
 
-        double temperaturaF = temperaturaC * 1.8 + 32;
-
-        System.out.println("La temperatura en Fahrenheit es: " + temperaturaF);
+        return temperaturaC * 1.8 + 32;
     }
 
-    public void calcularInteresPrestamo() {
+    public double calcularInteresPrestamo() {
         System.out.print("Ingresa el monto del préstamo: ");
         double monto = scanner.nextDouble();
 
         if (monto <= 0) {
             System.out.println("El monto debe ser mayor que cero.");
-            return;
         }
 
-        double montoFinal = monto + (monto * INTERES_MENSUAL * 12);
-
-        System.out.println();
-
-        System.out.println("El monto final a pagar en un año es de: " + montoFinal);
+        return monto + (monto * INTERES_MENSUAL * 12);
     }
 
-    public void calcularPagaNetaTrabajador() {
-        double pagoBruto, impuestos, pagoNeto;
+    public double calcularPagaNetaTrabajador() {
+        double pagoBruto, impuestos;
 
         System.out.print("Ingresa las horas trabajadas: ");
         int horasTrabajadas = scanner.nextInt();
@@ -112,14 +88,10 @@ public class Basicos {
 
         impuestos = pagoBruto * tasaImpuestos;
 
-        pagoNeto = pagoBruto - impuestos;
-
-        System.out.println("La paga neta del trabajador es: " + pagoNeto);
+        return pagoBruto - impuestos;
     }
 
-    public void calcularSalarioTrabajadorHorasExtras() {
-        double salario;
-
+    public double calcularSalarioTrabajadorHorasExtras() {
         System.out.print("Ingresa las horas trabajadas: ");
         double horasTrabajadas = scanner.nextDouble();
 
@@ -132,13 +104,10 @@ public class Basicos {
 
         if (horasTrabajadas < 0 || tarifaHoraria < 0) {
             System.out.println("Los valores no pueden ser negativos.");
-            return;
         }
 
         if (horasTrabajadas <= 40) {
-            salario = tarifaHoraria * horasTrabajadas;
-
-            System.out.println("El salario es de: " + salario);
+            return tarifaHoraria * horasTrabajadas;
         } else {
             double horasNormales = 40;
 
@@ -148,21 +117,18 @@ public class Basicos {
 
             double pagoExtra = horasExtras * tarifaHoraria * RECARGO_HORA_EXTRA;
 
-            salario = pago + pagoExtra;
-
-            System.out.println("El salario es de: " + salario);
+            return pago + pagoExtra;
         }
     }
 
-    public void calcularTiempo() {
+    public String calcularTiempo() {
         System.out.print("Ingresa los minutos: ");
         int minutosTotales = scanner.nextInt();
 
         System.out.println();
 
         if (minutosTotales < 0) {
-            System.out.println("No se pueden ingresar minutos negativos.");
-            return;
+            return "No se pueden ingresar minutos negativos.";
         }
 
         int dias = minutosTotales / 1440;
@@ -170,20 +136,17 @@ public class Basicos {
         int horas = minutosRestantes / 60;
         int minutos = minutosRestantes % 60;
 
-        System.out.println("Días: " + dias);
-        System.out.println("Horas: " + horas);
-        System.out.println("Minutos: " + minutos);
+        return "Días: " + dias + ", Horas: " + horas + ", Minutos: " + minutos;
     }
 
-    public void convertirMetros() {
+    public String convertirMetros() {
         System.out.print("Ingresa los metros: ");
         double metros = scanner.nextDouble();
 
         System.out.println();
 
         if (metros < 0) {
-            System.out.println("Por favor, ingresa un valor positivo.");
-            return;
+            return "Por favor, ingresa un valor positivo.";
         }
 
         double centimetros = metros * 100;
@@ -191,13 +154,10 @@ public class Basicos {
         double pies = metros * 3.28084;
         double pulgadas = metros * 39.3701;
 
-        System.out.println("Centimetros: " + centimetros);
-        System.out.println("Kilómetros: " + kilometros);
-        System.out.println("Pies: " + pies);
-        System.out.println("Pulgadas: " + pulgadas);
+        return "Centímetros: " + centimetros + ", Kilómetros: " + kilometros + ", Pies: " + pies + " , Pulgadas: " + pulgadas;
     }
 
-    public void calcularConsumoYVelocidad() {
+    public String calcularConsumoYVelocidad() {
         System.out.print("Ingresa los km recorridos: ");
         double kmRecorridos = scanner.nextDouble();
 
@@ -222,29 +182,21 @@ public class Basicos {
         System.out.println();
 
         double litrosConsumidos = dineroGastado / precioGasolina;
-
         double litrosPorKm = litrosConsumidos / kmRecorridos;
-        System.out.println("Litros por km: " + litrosPorKm);
-
         double eurosPorKm = dineroGastado / kmRecorridos;
-        System.out.println("Euros por km: " + eurosPorKm);
-
-        System.out.println();
 
         double litros100Km = litrosConsumidos / kmRecorridos * 100;
-        System.out.println("Litros por 100km: " + litros100Km);
-
         double euros100Km = dineroGastado / kmRecorridos * 100;
-        System.out.println("Euros por 100km: " + euros100Km);
-
-        System.out.println();
 
         double horasDecimales = horas + (minutos / 60.0);
-
         double velocidadMediaKmh = kmRecorridos / horasDecimales;
-        System.out.println("Velocidad media en km/h: " + velocidadMediaKmh);
-
         double velocidadMediaMs = (kmRecorridos * 1000) / (horasDecimales * 3600);
-        System.out.println("Velocidad media en m/s: " + velocidadMediaMs);
+
+        return "Litros por km: " + litrosPorKm +
+                ", Euros por km: " + eurosPorKm +
+                ", Litros/100km: " + litros100Km +
+                ", Euros/100km: " + euros100Km +
+                ", Velocidad media km/h: " + velocidadMediaKmh +
+                ", Velocidad media m/s: " + velocidadMediaMs;
     }
 }

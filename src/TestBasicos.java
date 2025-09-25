@@ -32,34 +32,44 @@ public class TestBasicos {
 
             switch (opcion) {
                 case 1:
-                    basc.calcularAreaTriangulo();
+                    double areaTriangulo = basc.calcularAreaTriangulo();
+                    System.out.println("El área del triángulo es: " + areaTriangulo);
                     break;
                 case 2:
-                    basc.calcularAreaCirculo();
+                    double areaCirculo = basc.calcularAreaCirculo();
+                    System.out.println("El área del triángulo es: " + areaCirculo);
                     break;
                 case 3:
-                    basc.calcularPromedioAlumno();
+                    double promedio = basc.calcularPromedioAlumno();
+                    System.out.println("El promedio del alumno es de: " + promedio);
                     break;
                 case 4:
-                    basc.convertirTemperaturaAFahrenheit();
+                    double temperatura = basc.convertirTemperaturaAFahrenheit();
+                    System.out.println("La temperatura a Fahrenheit es de: " + temperatura);
                     break;
                 case 5:
-                    basc.calcularInteresPrestamo();
+                    double interes = basc.calcularInteresPrestamo();
+                    System.out.println("El interés anual del préstamo es de: " + interes);
                     break;
                 case 6:
-                    basc.calcularPagaNetaTrabajador();
+                    double paga = basc.calcularPagaNetaTrabajador();
+                    System.out.println("La paga neta del trabajador es de: " + paga);
                     break;
                 case 7 :
-                    basc.calcularSalarioTrabajadorHorasExtras();
+                    double salario = basc.calcularSalarioTrabajadorHorasExtras();
+                    System.out.println("El salario del trabajador es de: " + salario);
                     break;
                 case 8 :
-                    basc.calcularTiempo();
+                    String tiempo = basc.calcularTiempo();
+                    System.out.println(tiempo);
                     break;
                 case 9 :
-                    basc.convertirMetros();
+                    String conversion = basc.convertirMetros();
+                    System.out.println(conversion);
                     break;
                 case 10 :
-                    basc.calcularConsumoYVelocidad();
+                    String consumo = basc.calcularConsumoYVelocidad();
+                    System.out.println(consumo);
                     break;
                 case 11 :
                     System.out.println("Saliendo del programa...");
